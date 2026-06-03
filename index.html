@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Quest: Area Master</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f4f8; color: #2d3436; padding: 20px; }
+        .container { max-width: 800px; background: #ffffff; margin: 0 auto; padding: 30px; border-radius: 20px; border: 3px solid #74b9ff; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        h1 { text-align: center; color: #0984e3; text-transform: uppercase; letter-spacing: 2px; }
+        h2 { color: #0984e3; border-bottom: 3px solid #74b9ff; padding-bottom: 10px; margin-top: 30px; }
+        .question-card { background: #eef6ff; padding: 15px; margin-bottom: 15px; border-radius: 12px; border-left: 6px solid #fdcb6e; color: #2d3436; font-weight: 500; }
+        input[type="text"] { width: 100%; padding: 12px; margin-top: 8px; border: 2px solid #74b9ff; border-radius: 8px; background: #ffffff; color: #0984e3; box-sizing: border-box; font-size: 1em; }
+        button { width: 100%; padding: 18px; background: #fdcb6e; color: #2d3436; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1.2em; margin-top: 25px; transition: 0.3s; }
+        button:hover { background: #ffeaa7; }
+        .result { margin-top: 25px; padding: 20px; text-align: center; font-size: 1.5em; display: none; color: #0984e3; border: 3px solid #fdcb6e; border-radius: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Math Quest: Area Master</h1>
+    <form id="quiz">
+        
+        <h2>[Diagnostic Phase]</h2>
+        <div class="question-card"><p>Manakah yang lebih luas, bidang A (petak 6x4) atau bidang B (petak 5x5)?</p><input type="text" id="q1" placeholder="Jawaban..."></div>
+        <div class="question-card"><p>Jika sebuah bangun datar dipotong menjadi dua bagian lalu disusun ulang, apakah luasnya berubah? Jelaskan alasanmu.</p><input type="text" id="q2" placeholder="Jawaban..."></div>
+        <div class="question-card"><p>Jika luas sebuah segitiga adalah 24 cm2 dan alasnya 8 cm, berapakah tingginya?</p><input type="text" id="q3" placeholder="Angka saja"></div>
+
+        <h2>[Medium Stage]</h2>
+        <div class="question-card"><p>Sebuah tutup buku berbentuk persegi panjang dengan panjang 25 cm dan lebar 18 cm. Berapa luas sampul buku tersebut?</p><input type="text" id="q4" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Kebun kakek berbentuk persegi dengan panjang sisi 15 meter. Hitunglah luas kebun tersebut!</p><input type="text" id="q5" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Layar tablet Gibran memiliki panjang 20 cm dan luas 300 cm². Berapakah lebar layar tablet tersebut?</p><input type="text" id="q6" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Sebuah lantai berukuran 4m x 3m akan ditutup ubin persegi berukuran 20cm x 20cm. Berapa banyak ubin yang dibutuhkan?</p><input type="text" id="q7" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Luas sebuah persegi sama dengan luas persegi panjang yang berukuran 16 cm x 4 cm. Berapakah panjang sisi persegi tersebut?</p><input type="text" id="q8" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Gibran menggabungkan dua persegi dengan sisi 10 cm secara berdampingan. Berapakah luas bangun gabungan tersebut?</p><input type="text" id="q9" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Sebuah taman berbentuk persegi panjang memiliki luas 120 m². Jika perbandingan panjang dan lebar adalah 6:5, tentukan panjang dan lebarnya!</p><input type="text" id="q10" placeholder="Contoh: 0,1"></div>
+        <div class="question-card"><p>Jika luas sebuah persegi panjang adalah 48 cm² dan panjangnya adalah 3 kali lebarnya, tentukan keliling bangun tersebut!</p><input type="text" id="q11" placeholder="Angka saja"></div>
+
+        <h2>[Hard Stage]</h2>
+        <div class="question-card"><p>Sebuah bangun terdiri dari persegi panjang (12cm x 8cm) yang di atasnya menempel sebuah segitiga dengan alas 12cm dan tinggi 5cm. Hitung luas totalnya.</p><input type="text" id="q12" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Hitung luas bangun berbentuk L dengan panjang sisi luar 10cm dan 10cm, serta lebar kaki 4cm.</p><input type="text" id="q13" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Sebuah taman berbentuk persegi panjang berukuran 20m x 15m. Di tengahnya terdapat kolam berbentuk persegi dengan sisi 5m. Berapakah luas taman di luar kolam?</p><input type="text" id="q14" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Tentukan luas gabungan dua segitiga sama kaki yang alasnya saling berhimpit, jika alas 10cm dan tinggi masing-masing segitiga 6cm.</p><input type="text" id="q15" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Bangun datar terdiri dari trapesium (sisi sejajar 15cm dan 20cm, tinggi 8cm) yang digabungkan dengan setengah lingkaran pada sisi 20cm. Hitung luas totalnya (gunakan π = 3,14).</p><input type="text" id="q16" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Sebuah lapangan berbentuk persegi panjang (50m x 30m). Di keempat sudutnya dibuat taman berbentuk kuarter lingkaran dengan radius 5m. Hitung luas lapangan yang tersisa.</p><input type="text" id="q17" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Diberikan sebuah bangun datar berbentuk 'frame' foto. Ukuran luar 40cm x 30cm, dan lebar bingkainya merata 5cm di setiap sisi. Hitung luas bingkainya saja.</p><input type="text" id="q18" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Hitung luas bangun gabungan yang terdiri dari sebuah persegi (sisi 14cm) dan empat buah setengah lingkaran yang masing-masing diameternya adalah sisi-sisi persegi tersebut.</p><input type="text" id="q19" placeholder="Angka saja"></div>
+        <div class="question-card"><p>Analisis: Jika sebuah luas bangun gabungan adalah 120 cm2 dan terdiri dari sebuah persegi panjang (10x8 cm) dan sebuah segitiga, tentukan kemungkinan alas dan tinggi segitiga tersebut.</p><input type="text" id="q20" placeholder="Contoh: alas ..., tinggi ..."></div>
+
+        <button type="button" onclick="submitQuiz()">SUBMIT MISSION</button>
+    </form>
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        const answers = { q3: "6", q4: "450", q5: "225", q6: "15", q7: "300", q8: "8", q9: "200", q10: "12,10", q11: "32", q12: "126", q13: "64", q14: "275", q15: "60", q16: "557", q17: "1421.5", q18: "700", q19: "490", q20: "alas 10, tinggi 8" };
+        let score = 0;
+        for (let i = 3; i <= 20; i++) {
+            let val = document.getElementById("q" + i).value.toLowerCase().trim();
+            if (val === answers["q" + i]) score++;
+        }
+        let res = document.getElementById("result");
+        res.style.display = "block";
+        res.innerHTML = "MISSION COMPLETED! Score: " + score + " / 18";
+    }
+</script>
+</body>
+</html>
